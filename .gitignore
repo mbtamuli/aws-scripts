@@ -1,2 +1,4 @@
 *.pem
 *.pub
+terminate_log_*
+*.env

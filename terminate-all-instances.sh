@@ -20,7 +20,7 @@ if [[ "$choice" == "Y" ]] || [[ "$choice" == "y" ]]; then
 				--output text)"
 
   while IFS= read -r instance; do
-    echo -e "[\e[0;34mNOTICE\e[0m] Deleting instance: $instance"
+    echo -e "[\e[0;34mNOTICE\e[0m] Terminating instance: $instance"
     aws ec2 terminate-instances --instance-ids "$instance" >> $LOGFILE
   done <<< "$instances_not_terminated"
 
