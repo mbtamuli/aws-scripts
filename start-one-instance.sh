@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #************************************************#
 #            start-one-instance.sh               #
 #           written by Mriyam Tamuli             #

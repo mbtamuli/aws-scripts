@@ -1,3 +1,6 @@
+groupID="$(aws ec2 create-security-group --group-name test-lc --description 'security group for development environment in EC2')"
+aws ec2 authorize-security-group-ingress --group-name test-lc --protocol tcp --port 22 --cidr 0.0.0.0/0
+
 aws autoscaling create-launch-configuration --launch-configuration-name test-lc --image-id ami-40d28157 --instance-type t2.micro --security-groups sg-bb1c35c6 --key-name mbt-test --block-device-mappings "[{\"DeviceName\": \"/dev/sda1\",\"Ebs\":{\"VolumeSize\":8}}]"
 
 aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-asg --launch-configuration-name test-lc --default-cooldown 60 --max-size 5 --min-size 1 --tags "ResourceId=my-asg,ResourceType=auto-scaling-group,Key=Name,Value=ASG_Instance,PropagateAtLaunch=true" --availability-zones "us-east-1c"

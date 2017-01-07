@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # TODO Move these to a .env file
 autoscale_group_name=my-asg

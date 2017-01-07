@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #************************************************#
 #          terminate-all-instance.sh             #
 #           written by Mriyam Tamuli             #
