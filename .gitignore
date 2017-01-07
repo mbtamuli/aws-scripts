@@ -3,3 +3,5 @@
 terminate_log_*
 *.log
 *.env
+.gitlab_with_runners_ids
+eb
