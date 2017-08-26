@@ -17,7 +17,7 @@ def lambda_handler(event, context):
             ids[instance['InstanceId']] = { tag['Key']: tag['Value'] for tag in instance['Tags'] }
             AMIid = ec.create_image(
                     InstanceId=instance['InstanceId'],
-                    Name=ids[instance['InstanceId']]['Name'] + " on " + create_date,
+                    Name='Lambda - ' + instance['InstanceId'] + " " + ids[instance['InstanceId']]['Name'] + " on " + create_date,
                     Description="Lambda created AMI of instance " + ids[instance['InstanceId']]['Name'] + " on " + create_date,
                     NoReboot=True,
                     DryRun=False
